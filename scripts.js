@@ -98,13 +98,19 @@ const loadPage = async (url, pushState = true) => {
   }
 };
 
-menuLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    const url = link.dataset.page;
-    setActive(link);
+document.addEventListener("click", (event) => {
+  const target = event.target.closest("[data-page]");
+  
+  if (target) {
+    // Ezt a sort kell ellenőrizni, hogy ott van-e:
+    event.preventDefault(); // Ez állítja meg a böngésző "saját" frissítését/villanását
+    
+    const url = target.dataset.page;
     loadPage(url);
-  });
+    
+    const sidebarLink = document.querySelector(`.sidebar a[data-page="${url}"]`);
+    setActive(sidebarLink);
+  }
 });
 
 window.addEventListener("popstate", (event) => {
@@ -122,10 +128,17 @@ if (initialHash && initialLink) {
   setActive(initialLink);
   loadPage(initialHash, false);
 } else {
-  const first = menuLinks[0];
-  setActive(first);
-  if (first) {
-    loadPage(first.dataset.page, false);
+  // Megkeressük azt a linket, ami pontosan a fooldal.html-re mutat
+  const mainPage = [...menuLinks].find((link) => link.dataset.page === 'pages/fooldal.html');
+  
+  if (mainPage) {
+    setActive(mainPage);
+    loadPage(mainPage.dataset.page, false);
+  } else {
+    // Ha valamiért nem találná, csak akkor dőljön vissza az elsőre
+    const first = menuLinks[0];
+    setActive(first);
+    if (first) loadPage(first.dataset.page, false);
   }
 }
 
