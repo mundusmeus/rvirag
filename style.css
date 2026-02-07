@@ -336,3 +336,22 @@ button.ghost, a.button.ghost {
     width: 100%;
   }
 }
+.custom-contact-link {
+  color: var(--primary); /* A megszokott pink színed */
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.custom-contact-link:hover {
+  opacity: 0.8; /* Csak egy picit halványul, ha fölé mész, de a színe marad */
+  color: var(--primary);
+}
+
+/* Ez biztosítja, hogy ne változzon a színe akkor sem, ha már rákattintottak */
+.custom-contact-link:active, 
+.custom-contact-link:visited {
+  color: var(--primary);
+}
