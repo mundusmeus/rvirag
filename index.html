@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R. Virág – Virágbolt</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+  <header class="site-banner">
+    <div class="brand">
+      <div class="brand-logo-wrap">
+        <img class="brand-logo" src="assets/logo.png" alt="R. Virág logo" />
+      </div>
+      <div>
+        <h1>R Virág virágbolt</h1>
+        <p>A precízség fél siker, a tisztaság fél egészség, az alkotás öröm! 🌸 Kegyeleti készítmények, csokrok, virág boxok, kerti- és szoba növények, dísz- és ajándék tárgyak.</p>
+      </div>
+    </div>
+    <div class="banner-actions">
+      <button class="primary">Rendelj csokrot</button>
+      <a href="pages/elerhetoseg.html" data-page="pages/elerhetoseg.html" class="button ghost">Kapcsolat</a>
+    </div>
+  </header>
+
+  <div class="page-layout">
+    <aside class="sidebar">
+      <h2>Menü</h2>
+      <nav>
+        <a href="pages/fooldal.html" data-page="pages/fooldal.html" class="active">Főoldal</a>
+        <a href="pages/szolgaltatasok.html" data-page="pages/szolgaltatasok.html">Szolgáltatások</a>
+        <a href="pages/galeria.html" data-page="pages/galeria.html">Galéria</a>
+        <a href="pages/elerhetoseg.html" data-page="pages/elerhetoseg.html">Elérhetőség</a>
+        <a href="pages/esemenyek.html" data-page="pages/esemenyek.html">Események</a>
+        <a href="pages/ajandekok.html" data-page="pages/ajandekok.html">Ajándékok</a>
+      </nav>
+      <div class="sidebar-callout">
+        <h3>Heti ajánlás</h3>
+        <p>Rózsa + eukaliptusz csokor  Ft-tól.</p>
+      </div>
+    </aside>
+
+    <main class="content" id="content" aria-live="polite">
+      <div class="loading">Betöltés...</div>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__content" role="dialog" aria-modal="true" aria-label="Képnézegető">
+      <button class="lightbox__close" type="button" aria-label="Bezárás" data-lightbox-close>×</button>
+      <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Előző kép">‹</button>
+      <img class="lightbox__image" alt="" />
+      <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Következő kép">›</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Nyitva: H–P 8:30–17:00, Sz 8:00–12:00 · 8000 Székesfehérvár, Homoksor 5.</p>
+    <p>Telefon: +36 30 487 3028 · E-mail: rviragbolt@gmail.com</p>
+  </footer>
+</body>
+</html>
